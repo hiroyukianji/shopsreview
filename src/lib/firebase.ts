@@ -13,7 +13,6 @@ import "firebase/firestore";
 //import "firebase/functions";
 //import "firebase/storage";
 
-
 LogBox.ignoreLogs(["Setting a timer"]);
 const _console = _.clone(console);
 console.warn = (message) => {
@@ -28,6 +27,11 @@ if (!firebase.apps.length) {
   firebase.initializeApp(Constants.manifest.extra.firebase);
 }
 
+/**
+ * Shopの取得
+ * 全件
+ * ソート指定なし
+ */
 export const getShops = async () => {
   const snapshot = await firebase.firestore().collection("shops").get();
   const shops = snapshot.docs.map((doc) => doc.data() as Shop);
