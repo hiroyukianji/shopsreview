@@ -18,7 +18,7 @@ type Props = {
  * ・数値のフォントサイズ[14]
  * 星の数は、３項演算子を用いて、表示する星のnameを動的に指定する事で、星の数を表現
  */
-export const Starts: React.FC<Props> = ({
+export const Stars: React.FC<Props> = ({
   score,
   starSize = 16,
   textSize = 14,

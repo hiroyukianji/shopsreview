@@ -1,45 +1,17 @@
-import { StatusBar } from "expo-status-bar";
 import React, { useState, useEffect } from "react";
-import { StyleSheet, FlatList, View, SafeAreaView } from "react-native";
+/* navigation */
+import { AppNavigation } from "./src/navigation/AppNavigator";
+/* contexts */
+import { UserContext } from "./src/contexts/userContext";
 /* types */
-import { Shop } from "./src/types/Shop";
-/* lib */
-import { getShops } from "./src/lib/firebase";
-/* components */
-import { ShopReviewItem } from "./src/components/ShopReviewItem";
+import { User } from "./src/types/user";
 
 export default function App() {
-  const [shops, setShops] = useState<Shop[]>([]);
-
-  useEffect(() => {
-    getFirebaseItems();
-  }, []);
-
-  const getFirebaseItems = async () => {
-    const shops = await getShops();
-    setShops(shops);
-  };
+  const [user, setUser] = useState<User>();
 
   return (
-    <SafeAreaView style={styles.container}>
-      <FlatList
-        data={shops}
-        renderItem={({ item }: { item: Shop }) => (
-          <ShopReviewItem shop={item} />
-        )}
-        keyExtractor={(item, index) => index.toString()}
-        numColumns={2}
-      />
-    </SafeAreaView>
+    <UserContext.Provider value={{ user, setUser }}>
+      <AppNavigation />
+    </UserContext.Provider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-    marginTop: 12,
-  },
-});
