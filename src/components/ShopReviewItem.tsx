@@ -2,7 +2,7 @@ import React from "react";
 import { StyleSheet, Image, Text, Dimensions } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
 /* type */
-import { Shop } from "../types/Shop";
+import { Shop } from "../types/shop";
 /* components */
 import { Stars } from "./Stars";
 

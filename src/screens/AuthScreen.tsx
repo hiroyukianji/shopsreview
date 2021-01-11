@@ -19,7 +19,7 @@ export const AuthScreen: React.FC = () => {
       setUser(user);
     };
     fetchUser();
-  }, []);
+  }, []); 
 
   return (
     <SafeAreaView style={styles.container}>

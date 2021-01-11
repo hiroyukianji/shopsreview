@@ -1,4 +1,4 @@
-import { Shop } from "../types/Shop";
+import { Shop } from "./shop";
 
 /**
  * 画面遷移時のパラメータ定義

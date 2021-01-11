@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { StyleSheet, FlatList, SafeAreaView } from "react-native";
 /* types */
-import { Shop } from "../types/Shop";
+import { Shop } from "../types/shop";
 import { StackNavigationProp } from "@react-navigation/stack";
 import { RootStackParamList } from "../types/navigation";
 /* lib */
@@ -37,6 +37,8 @@ export const HomeScreen = ({ navigation }: Props ) => {
   const getFirebaseItems = async () => {
     const shops = await getShops();
     setShops(shops);
+    console.log(shops[0].id);
+    console.log(shops[0].name);
   };
 
   // ショップタッチで、詳細画面へ遷移

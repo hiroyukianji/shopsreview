@@ -7,7 +7,7 @@ type UserContextValue = {
 };
 
 /**
- * ユーザ情報：コンテキスト
+ * ユーザ情報
  */
 export const UserContext = createContext<UserContextValue>({
   user: null,

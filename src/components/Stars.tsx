@@ -2,7 +2,7 @@ import React from "react";
 import { View, StyleSheet, Image, Text, Dimensions } from "react-native";
 import { FontAwesome } from "@expo/vector-icons";
 /* type */
-import { Shop } from "../types/Shop";
+import { Shop } from "../types/shop";
 
 type Props = {
   score: number;
